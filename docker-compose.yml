@@ -5,6 +5,10 @@ services:
       dockerfile: Dockerfile.dev
     volumes:
       - .:/app
+      - bundle_cache:/usr/local/bundle
     ports:
-      - "3006:3000"
+      - "3005:3000"
     command: bundle exec rails server -b 0.0.0.0
+
+volumes:
+  bundle_cache:
